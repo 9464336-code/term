@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Маршрут тура: Мадрид – Шанхай (27.12.2026 – 2027)</title>
+<style>
+  :root{
+    --bg:#f4f6fb; --card:#ffffff; --ink:#1c2433; --muted:#6b7585;
+    --line:#e2e7f0; --accent:#2563eb; --accent-soft:#e8f0fe;
+    --warn:#b45309; --warn-soft:#fff7ed; --ok:#15803d; --ok-soft:#ecfdf3;
+    --shadow:0 1px 3px rgba(16,24,40,.06),0 8px 24px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.45;padding:24px 14px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  header.top{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;
+       border-radius:18px;padding:26px 28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  header.top h1{margin:0 0 6px;font-size:24px;letter-spacing:.2px}
+  header.top .sub{opacity:.92;font-size:14px}
+  header.top .pills{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+  .pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);
+       padding:5px 11px;border-radius:999px;font-size:12.5px;white-space:nowrap}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+       box-shadow:var(--shadow);overflow:hidden}
+  .card h2{margin:0;padding:16px 20px;font-size:16px;border-bottom:1px solid var(--line);
+       display:flex;align-items:center;gap:10px;background:#fbfcff}
+  .flag{font-size:20px}
+  .seg{display:flex;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line)}
+  .seg:last-child{border-bottom:none}
+  .seg .when{flex:0 0 92px;font-size:12.5px;color:var(--muted);font-weight:600;padding-top:2px}
+  .seg .body{flex:1;min-width:0}
+  .seg .title{font-weight:600;font-size:14.5px;margin-bottom:2px}
+  .seg .meta{font-size:13px;color:var(--muted)}
+  .ico{flex:0 0 30px;height:30px;border-radius:9px;display:grid;place-items:center;
+       background:var(--accent-soft);font-size:15px}
+  .ico.stay{background:#fef3c7}
+  .ico.fly{background:#dbeafe}
+  .ico.car{background:#e0f2fe}
+  .field{margin-top:8px;display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+  .field label{display:flex;flex-direction:column;font-size:11.5px;color:var(--muted);
+       font-weight:600;gap:4px}
+  .field input{font:inherit;font-size:13.5px;padding:7px 10px;border:1.5px solid var(--line);
+       border-radius:9px;background:#fff;min-width:120px}
+  .field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+  .need{border-color:#fca5a5 !important;background:var(--warn-soft)}
+  .calc{font-size:12.5px;color:var(--ok);font-weight:600;background:var(--ok-soft);
+       padding:5px 9px;border-radius:8px;border:1px solid #bbf7d0;align-self:center}
+  .note{margin:0;padding:14px 20px;font-size:12.5px;color:var(--muted);background:#fbfcff}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;
+       background:var(--warn-soft);color:var(--warn);border:1px solid #fed7aa;margin-left:6px}
+  .tag.fix{background:var(--accent-soft);color:var(--accent);border-color:#bfdbfe}
+  .alt{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .btn{font:inherit;font-weight:600;font-size:13.5px;padding:10px 16px;border-radius:10px;
+       border:1px solid var(--line);background:#fff;cursor:pointer}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .legend{font-size:12px;color:var(--muted);margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+  .legend b{color:var(--warn)}
+  @media print{body{background:#fff;padding:0}.actions,.legend{display:none}
+       .card,header.top{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>🧭 Маршрут тура: Мадрид → Шанхай</h1>
+    <div class="sub">27.12.2026 – 06.01.2027 (Испания) · далее Китай (Шанхай) · 2 гостя / 2 номера</div>
+    <div class="pills">
+      <span class="pill">✈️ Перелёт HX‑246 Мадрид → Шанхай, вылет 13:20</span>
+      <span class="pill">🏨 Отели 5*</span>
+      <span class="pill">🚗 Все трансферы включены</span>
+    </div>
+  </header>
+
+  <div class="legend">
+    <span><b>Оранжевые поля</b> — нужно уточнить продолжительность / даты</span>
+    <span>Ночи считаются автоматически по датам</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- ИСПАНИЯ -->
+    <section class="card">
+      <h2><span class="flag">🇪🇸</span> Испания · Мадрид</h2>
+
+      <div class="seg">
+        <div class="when">27.12.2026</div>
+        <div class="ico car">🚗</div>
+        <div class="body">
+          <div class="title">Трансфер: аэропорт Мадрид (MAD) → отель</div>
+          <div class="meta">Групповой/индивидуальный трансфер по прилёту</div>
+          <div class="field">
+            <label>Время прилёта в Мадрид
+              <input type="time" id="madArr" class="need">
+            </label>
+            <label>Длительность трансфера (мин)
+              <input type="number" id="madTransfer" placeholder="напр. 40" min="0" class="need">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="seg">
+        <div class="when">27.12.2026<br>– 06.01.2027</div>
+        <div class="ico stay">🏨</div>
+        <div class="body">
+          <div class="title">Проживание в отеле 5* <span class="tag fix">фикс. даты</span></div>
+          <div class="meta">2 номера · заезд 27.12.2026, выезд 06.01.2027</div>
+          <div class="field">
+            <label>Заезд
+              <input type="date" id="madIn" value="2026-12-27">
+            </label>
+            <label>Выезд
+              <input type="date" id="madOut" value="2027-01-06">
+            </label>
+            <span class="calc" id="madNights">— ночей</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="seg">
+        <div class="when">06.01.2027</div>
+        <div class="ico car">🚗</div>
+        <div class="body">
+          <div class="title">Трансфер: отель → аэропорт Мадрид (MAD)</div>
+          <div class="field">
+            <label>Длительность трансфера (мин)
+              <input type="number" id="madTransfer2" placeholder="напр. 40" min="0" class="need">
+            </label>
+            <label>Рекомендуемый выезд из отеля
+              <input type="time" id="madDepart" class="need">
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПЕРЕЛЁТ -->
+    <section class="card">
+      <h2><span class="flag">✈️</span> Перелёт Мадрид → Шанхай</h2>
+      <div class="seg">
+        <div class="when">06.01.2027</div>
+        <div class="ico fly">✈️</div>
+        <div class="body">
+          <div class="title">Рейс HX‑246 · Мадрид (MAD) → Шанхай Пудун (PVG)</div>
+          <div class="meta">Вылет в 13:20</div>
+          <div class="field">
+            <label>Вылет
+              <input type="time" id="flightDep" value="13:20">
+            </label>
+            <label>Длительность перелёта (ч:мин)
+              <input type="text" id="flightDur" placeholder="напр. 12:30" class="need">
+            </label>
+            <label>Прилёт в Шанхай (местное, +7ч)
+              <input type="time" id="flightArr" class="need">
+            </label>
+            <label>Дата прилёта
+              <input type="date" id="flightArrDate" class="need">
+            </label>
+          </div>
+          <div class="alt">⚠️ Уточнить время в пути и дату прилёта (как правило, прилёт +1 день из‑за разницы часовых поясов +7ч).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КИТАЙ -->
+    <section class="card">
+      <h2><span class="flag">🇨🇳</span> Китай · Шанхай</h2>
+
+      <div class="seg">
+        <div class="when">по прилёту</div>
+        <div class="ico car">🚗</div>
+        <div class="body">
+          <div class="title">Трансфер: аэропорт Пудун (PVG) → отель</div>
+          <div class="field">
+            <label>Длительность трансфера (мин)
+              <input type="number" id="shTransfer" placeholder="напр. 60" min="0" class="need">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="seg">
+        <div class="when">даты<br>уточнить</div>
+        <div class="ico stay">🏨</div>
+        <div class="body">
+          <div class="title">Проживание в Шанхае · отель 5*, BB <span class="tag">нужны даты</span></div>
+          <div class="meta">Предпочтение: <b>Primus Hotel Shanghai Sanjiagang 5*</b> (рассмотрим и альтернативы) · 2 номера</div>
+          <div class="field">
+            <label>Заезд
+              <input type="date" id="shIn" class="need">
+            </label>
+            <label>Выезд
+              <input type="date" id="shOut" class="need">
+            </label>
+            <span class="calc" id="shNights">— ночей</span>
+          </div>
+          <div class="alt">Альтернативы 5* BB (для сравнения): The Ritz‑Carlton Shanghai Pudong · Grand Kempinski · Primus Sanjiagang. Уточнить категорию номеров и питание.</div>
+        </div>
+      </div>
+
+      <div class="seg">
+        <div class="when">в день<br>вылета</div>
+        <div class="ico car">🚗</div>
+        <div class="body">
+          <div class="title">Трансфер: отель → аэропорт Шанхай</div>
+          <div class="field">
+            <label>Длительность трансфера (мин)
+              <input type="number" id="shTransfer2" placeholder="напр. 60" min="0" class="need">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">✈️ Перелёты Москва → Мадрид и Шанхай → Москва туристы приобретают самостоятельно (в тур не входят).</p>
+    </section>
+
+  </div>
+
+  <div class="actions">
+    <button class="btn primary" onclick="window.print()">🖨️ Печать / PDF</button>
+    <button class="btn" onclick="resetAll()">↺ Очистить поля</button>
+  </div>
+
+</div>
+
+<script>
+  function nightsBetween(a,b){
+    if(!a||!b) return null;
+    const d=(new Date(b)-new Date(a))/86400000;
+    return d>0?Math.round(d):null;
+  }
+  function plural(n){
+    const n10=n%10,n100=n%100;
+    if(n10===1&&n100!==11)return 'ночь';
+    if(n10>=2&&n10<=4&&(n100<10||n100>=20))return 'ночи';
+    return 'ночей';
+  }
+  function upd(){
+    const m=nightsBetween(madIn.value,madOut.value);
+    madNights.textContent = m!=null ? m+' '+plural(m) : '— ночей';
+    const s=nightsBetween(shIn.value,shOut.value);
+    shNights.textContent = s!=null ? s+' '+plural(s) : '— ночей';
+    // снимаем подсветку с заполненных полей
+    document.querySelectorAll('input.need').forEach(i=>{
+      i.style.opacity = i.value ? .999 : 1;
+      if(i.value){ i.classList.remove('need'); i.dataset.need='1'; }
+    });
+  }
+  function resetAll(){
+    document.querySelectorAll('input').forEach(i=>{
+      if(i.id==='flightDep'){i.value='13:20';return;}
+      if(i.id==='madIn'){i.value='2026-12-27';return;}
+      if(i.id==='madOut'){i.value='2027-01-06';return;}
+      i.value='';
+      if(i.dataset.need){i.classList.add('need');}
+    });
+    upd();
+  }
+  document.addEventListener('input',upd);
+  upd();
+</script>
+</body>
+</html>
