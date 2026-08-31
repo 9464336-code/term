@@ -1,0 +1,36 @@
+# Публичный доступ через Cloudflare Tunnel (быстрый туннель, без аккаунта Cloudflare).
+# Использовать вместе с основным файлом и скриптом tunnel-up.sh:
+#
+#   ./tunnel-up.sh
+#
+# Поднимает два быстрых туннеля и печатает две публичные https-ссылки:
+#   - приложение оператора  (туннель на сервис rails)
+#   - страница сайта с виджетом (туннель на сервис site)
+#
+# Требуется свободный доступ в интернет к сети Cloudflare (не работает из
+# ограниченных песочниц). Быстрый туннель даёт случайный адрес
+# https://<random>.trycloudflare.com и живёт, пока запущен контейнер.
+
+services:
+  # nginx, отдающий сгенерированную страницу сайта из ./run
+  site:
+    image: nginx:alpine
+    restart: always
+    volumes:
+      - ./run:/usr/share/nginx/html:ro
+
+  # Публичный туннель на приложение оператора (Chatwoot)
+  cloudflared-app:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel --no-autoupdate --url http://rails:3000
+    depends_on:
+      - rails
+
+  # Публичный туннель на страницу сайта с виджетом
+  cloudflared-site:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel --no-autoupdate --url http://site:80
+    depends_on:
+      - site
