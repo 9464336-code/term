@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пример сайта с виджетом Chatwoot</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; background: #f6f7f9; color: #1f2933; }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 1.6rem; }
+    code { background: #e4e7eb; padding: 2px 6px; border-radius: 4px; }
+    .hint { background: #fff; border: 1px solid #d3dce6; border-radius: 8px; padding: 16px 20px; margin-top: 24px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Демо-страница вашего сайта</h1>
+  <p>В правом нижнем углу должен появиться пузырёк чата Chatwoot.</p>
+  <div class="hint">
+    <p>Чтобы виджет заработал, впишите ниже в скрипте свои значения:</p>
+    <p><code>BASE_URL</code> — адрес вашего Chatwoot (тот же, что <code>FRONTEND_URL</code> в .env);<br>
+       <code>websiteToken</code> — токен инбокса: в Chatwoot откройте
+       Настройки → Входящие → ваш Website-инбокс → Настройка.</p>
+  </div>
+</main>
+
+<!-- Необязательные настройки виджета: задать ДО загрузки sdk.js -->
+<script>
+  window.chatwootSettings = {
+    locale: "ru",
+    position: "right",          // left | right
+    type: "standard",           // standard | expanded_bubble
+    launcherTitle: "Напишите нам"
+  };
+</script>
+
+<!-- Официальный сниппет установки виджета Chatwoot -->
+<script>
+  (function (d, t) {
+    var BASE_URL = "http://localhost:3000";              // <-- адрес вашего Chatwoot
+    var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    g.src = BASE_URL + "/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+    g.onload = function () {
+      window.chatwootSDK.run({
+        websiteToken: "ВАШ_WEBSITE_TOKEN",               // <-- токен Website-инбокса
+        baseUrl: BASE_URL
+      });
+    };
+  })(document, "script");
+</script>
+
+<!-- Связка посетителя с вашим приложением: если пользователь залогинен на сайте,
+     передайте его идентификатор и данные — переписка привяжется к нему,
+     а в webhooks к вам придёт этот же identifier.
+     В проде включите в настройках инбокса "Проверку личности пользователя" (HMAC)
+     и передавайте identifier_hash, посчитанный на бэкенде:
+     hex(hmac_sha256(HMAC_KEY_инбокса, identifier)). -->
+<script>
+  window.addEventListener("chatwoot:ready", function () {
+    // Пример; возьмите реальные данные из сессии вашего приложения.
+    // window.$chatwoot.setUser("user-42", {
+    //   name: "Иван Иванов",
+    //   email: "ivan@example.com",
+    //   identifier_hash: "<HMAC c бэкенда>"
+    // });
+    // window.$chatwoot.setCustomAttributes({ tariff: "premium", city: "Москва" });
+  });
+</script>
+</body>
+</html>
