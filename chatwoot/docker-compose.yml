@@ -2,13 +2,13 @@
 # rails (веб), sidekiq (фоновые задачи), postgres (с pgvector), redis.
 # Все настройки приложения — в файле .env (см. .env.example).
 
-services:
-  base: &base
-    image: chatwoot/chatwoot:v4.16.0
-    env_file: .env
-    volumes:
-      - storage:/app/storage
+x-base: &base
+  image: chatwoot/chatwoot:v4.16.0
+  env_file: .env
+  volumes:
+    - storage:/app/storage
 
+services:
   rails:
     <<: *base
     depends_on:
